@@ -1,0 +1,76 @@
+   .xia {
+     display: flex;
+     flex-direction: column;
+     box-sizing: border-box;
+   }
+
+
+   .you {
+     display: flex;
+     flex-direction: row;
+     box-sizing: border-box;
+
+   }
+
+   .zon {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+
+
+   
+
+   .铺满 {
+     width: 100%;
+     height: 100%;
+   }
+
+   .原位 {
+     position: absolute;
+     top: 0;
+     left: 0;
+   }
+
+   .正比 {
+     aspect-ratio: 1 / 1;
+   }
+
+   .文本限制长度 {
+     overflow: hidden;
+     white-space: nowrap;
+     /* text-overflow: ellipsis; */
+   }
+
+   .禁用框选文本 {
+     user-select: none;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+   }
+
+   /* ////////////////////////////////////////////// */
+   body {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     height: 100vh;
+     box-sizing: border-box;
+     margin: 0;
+     overflow: hidden;
+
+     user-select: none;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+   }
+
+   :root {
+     --sf: 1
+   }
+
+   /* const sf=getComputedStyle(document.documentElement).getPropertyValue('--sf');
+        const sfValue=parseFloat(sf); */
+
+   /* //////////////////////////////////////// */
