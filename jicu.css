@@ -69,8 +69,10 @@
    :root {
      --sf: 1
    }
+     /* const sf=getComputedStyle(document.documentElement).getPropertyValue('--sf');
+          const sfValue=parseFloat(sf); */
 
-   /* const sf=getComputedStyle(document.documentElement).getPropertyValue('--sf');
-        const sfValue=parseFloat(sf); */
+     /* overflow: hidden; */
+ /* white-space: nowrap; */
 
    /* //////////////////////////////////////// */

@@ -5,18 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="jicu.css">
+    <script src="./尺寸适应.js"></script>
   </head>
   <style>
     .重要文本 {
       color: #4d416e;
     }
 
-    .边框 {
-      border: #e4e4f373 4px solid;
-      border-radius: 10px;
-      padding: 10px;
-      background-color: #e4e4f31c;
-    }
+
 
     a {
       display: inline-block;
@@ -27,98 +23,157 @@
       transition: all 0.25s ease;
     }
 
-    .背景图 {
-      background-position: center center;
+    .底边栏背景 {
+      border-radius: calc(var(--sf) * 50px) calc(var(--sf) * 50px) 0 0;
+      background-image: url(./更多.jpg);
       background-size: cover;
-      background-color: rgba(255, 255, 255, 0.716);
+      overflow: hidden;
+      background-position: 50% 31%;
+      background-color: rgba(255, 255, 255, 0.292);
       background-blend-mode: overlay;
-    }
-
-    .分割线 {
-      border: none;
-      height: 3px;
-      background: #e7e6f542;
-      margin: 24px 0 0;
-      position: relative;
+      box-sizing: border-box;
     }
   </style>
 
-  <body style="color: #81779ad9;">
-    <div class="xia" style="gap: 50px;">
-      <div class="you zon 边框" style="gap: 20px;position: relative;">
-        <span style="position: absolute;left: 0;top: -10px;transform: translateY(-100%);">个人信息</span>
-        <div class="正比" style="height: 100px;border-radius: 50%;overflow: hidden; ">
-          <img class="正比" src="./头像.png" alt="" style="height: 227%;transform: translate(-11%, -25%); ">
-        </div>
-        <div class="xia">
-          <span class="重要文本" style="font-size: 50px;">钟平</span>
-          <span>男 2004</span>
-          <span>湖北</span>
-        </div>
-        <div style="flex: 1;"></div>
-        <div class="xia">
-          <span class="重要文本" style="font-size: 50px;">2298803971@qq.com</span>
-          <span>湖北科技职业学院 2024/06-2027/06</span>
-          <span>软件技术 大专</span>
-        </div>
-      </div>
-      <div class="xia 边框" style="position: relative;">
-        <span style="position: absolute;left: 0;top: -10px;transform: translateY(-100%);">程序</span>
-        <a href="https://www.bilibili.com/video/BV1ACJJ65EMx/" target="_blank" rel="noopener noreferrer"
-          style="position: absolute;right: 0;top: -10px;transform: translateY(-100%);">视频速览</a>
-        <div class="xia">
-          <span>全栈开发 软件</span>
-          <div class="xia 背景图" style="background-image: url(./软件.jpg);padding: 20px;
-         background-position: center center;">
-            <span>一个易用的文件传输软件</span>
-            <span>一端原生App,一端浏览器,扫码即连,双向互传</span>
-            <span>平台:windows ,android</span>
-            <span>开发:应用级后端(c#,kt)+系统web+原生前端(html/css/js)</span>
-            <div class="you" style="gap: 20px;">
-              <a href="https://github.com/BMPZXC/ju_yu_wang__fen_xiang_3">主仓库:github</a>
-              <a href="https://gitee.com/BMPZXC/ju_yu_wang__fen_xiang_3">国内推荐:gitee</a>
-            </div>
-          </div>
-        </div>
-        <hr class="分割线">
-        </hr>
-        <div class="xia" >
-          <span>godot 游戏</span>
-          <div class="xia 背景图" style="background-image: url(./游戏2.jpg);padding: 20px;
-                  background-position: 50% 70%;">
-            <span>2025卡赢杯参赛作品'途中'</span>
-            <span>横板跳跃+剧情.15天开发,两人,我负责程序</span>
-            <span>你将作为攻击程序接入一个持续报错的网络，
-              与名为“电子幽灵”的存在协同行动，</span>
-            <span>修复一条始终无法完成的连接通路。</span>
-            <span>平台:windows</span>
-            <div class="you" style="gap: 20px;">
-              <a href="https://github.com/BMPZXC/tu_zhong">主仓库:github</a>
-              <a href="https://gitee.com/BMPZXC/tu_zhong">国内推荐:gitee</a>
-            </div>
-          </div>
-          <div class="xia 背景图" style="background-image: url(./游戏1.jpg);padding: 20px;
-                    background-position: 50% 90%;">
-            <span>象棋.叠子</span>
-            <span>在原有规则上,允许棋子叠加,一起移动</span>
-            <span>有提示,降低入门难度</span>
-            <span>比如:送将,解将,移动的位置是否被吃</span>
-            <div class="you" style="gap: 20px;">
-              <a href="https://github.com/BMPZXC/xiang_qi__die_zi">主仓库:github</a>
-            </div>
+  <body style="color: #81779ad9;white-space: nowrap;">
+    <div class="xia 铺满" style="overflow: hidden;">
+      <div class="zon 铺满">
+
+        <div class="zon 重要文本" style="position: relative;">
+          <span class="you zon" style="position: absolute;top: 0;transform: translateY(-100%);">
+            <span style="font-size:calc(var(--sf) * 120px);text-shadow: 0px 5px 8px #3a315e4d;">不明瓶中星尘</span>
+            <span style=" writing-mode: vertical-lr;font-size: calc(var(--sf) * 30px);position: relative;
+              bottom: -5px;text-shadow:5px 0px 4px #3a315e4d;">BMPZXC</span>
+          </span>
+          <div class="正比 "
+            style="height:calc(var(--sf) * 250px);border-radius: 50%;overflow: hidden; box-shadow: 0px 5px 17px 6px #3a315e4d;">
+            <img class="正比" src="./头像.png" alt="" style="height: 205%;transform: translate(-6%, -21%); ">
           </div>
         </div>
 
+        <div id="弹幕区域" class="铺满 原位" style="z-index: -1;color: #81779ad9;font-size: calc(var(--sf) * 40px);"></div>
       </div>
-      <div class="xia 边框 背景图" style="position: relative;
-      background-image: url(./更多.jpg);background-position: 50% 29%;">
-        <span style="position: absolute;left: 0;top: -10px;transform: translateY(-100%);">更多信息</span>
-        <span>我还在学绘画,剪辑.........</span>
-        <span>关于求职意向:现在这环境,哪缺人去哪里</span>
-        <span class="重要文本">想了解更多,请看QQ:2298803971空间,它是公开的</span>
+
+      <div class="zon zon 底边栏背景 " style="padding: 5px 20px;width: 100%;box-shadow: 0px -5px 10px 0px #3a315e4d;
+      flex-wrap: wrap;gap:0 calc(var(--sf) * 80px);font-size: calc(var(--sf) * 40px);">
+        <a href="https://space.bilibili.com/1101590867" target="_blank" rel="noopener noreferrer">哔哩哔哩</a>
+        <a href="mqq://card/show_pslcard?src_type=internal&source=sharecard&version=1&uin=2298803971">
+          qq:2298803971</a>
+        <a href="https://github.com/BMPZXC" target="_blank" rel="noopener noreferrer">主仓库github</a>
+        <a href="https://gitee.com/BMPZXC" target="_blank" rel="noopener noreferrer">国内备用gitee</a>
       </div>
     </div>
 
   </body>
+
+  <style>
+    .弹幕左右 {
+      position: absolute;
+      pointer-events: none;
+      top: 50%;
+      left: 0;
+      animation: 弹幕左右 20s linear forwards;
+    }
+
+    @keyframes 弹幕左右 {
+      0% {
+        transform: translateX(100vw);
+      }
+
+      100% {
+        transform: translateX(-100vw);
+      }
+    }
+
+    .弹幕上下 {
+      position: absolute;
+      pointer-events: none;
+      top: 0;
+      left: 50%;
+      animation: 弹幕上下 20s linear forwards;
+      writing-mode: vertical-lr;
+    }
+
+    @keyframes 弹幕上下 {
+      0% {
+        transform: translateY(100vh);
+      }
+
+      100% {
+        transform: translateY(-100vh);
+      }
+    }
+  </style>
+  <script>
+    let 数据 = ["java太罗嗦了"
+      , "c++语法太乱"
+      , "为什么应用级的kt也罗嗦"
+      , "c#值得学"
+      , "c可以学,用来写解释器"
+      , "原生html-css-js值得学,至于前端框架,还是算了"
+      , "godot很轻量,但导出应用不够小"
+
+      , "努力学画画中.........."
+
+      , "听言辩事判人心,谈言说笑欲识君."
+      , "人贤露三面锋芒,剑出任四溅残影."
+
+      , "能否通过未解之物理解自己(ba"
+      , "技术宅拯救世界>.<"
+
+      , "欸嘿嘿...."
+
+      , "机会大于努力,运气也是实力的一部分."
+
+    ]
+    let 弹幕区域 = document.getElementById('弹幕区域');
+    function 发送弹幕(内容) {
+      const 弹幕 = document.createElement('span');
+      弹幕.textContent = 内容;
+      if (window.innerWidth < window.innerHeight * 0.8) {
+        弹幕.className = '弹幕上下';
+        弹幕.style.left = `${Math.random() * 100}%`;
+       
+      } else {
+        弹幕.className = '弹幕左右';
+        弹幕.style.top = `${Math.random() * 100}%`;
+       
+      }
+
+
+      弹幕区域.appendChild(弹幕);
+
+
+
+      弹幕.addEventListener('animationend', () => {
+        弹幕.remove();
+      });
+    }
+    setInterval(() => {
+      if (document.hidden) { return }
+      const 随机内容 = 数据[Math.floor(Math.random() * 数据.length)];
+      发送弹幕(随机内容);
+    }, 1000);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        for (const element of 弹幕区域.children) {
+          const animation = element.getAnimations()[0];
+          if (animation) {
+            animation.pause();
+          }
+        }
+
+      } else {
+        for (const element of 弹幕区域.children) {
+          const animation = element.getAnimations()[0];
+          if (animation) {
+            animation.play();
+          }
+        }
+
+      }
+    });
+  </script>
 
 </html>
