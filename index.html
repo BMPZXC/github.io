@@ -27,41 +27,95 @@
       border-radius: calc(var(--sf) * 50px) calc(var(--sf) * 50px) 0 0;
       background-image: url(./更多.jpg);
       background-size: cover;
-      overflow: hidden;
+      /* overflow: hidden; */
       background-position: 50% 31%;
       background-color: rgba(255, 255, 255, 0.292);
       background-blend-mode: overlay;
-      box-sizing: border-box;
+
+      position: absolute;
+      z-index: -1;
+      top: 0;
+
+      mask-image: linear-gradient(to top, transparent 0%, black calc(100% - var(--sf) * 80px));
+      mask-size: 100% 100%;
+    }
+  </style>
+  <style>
+    .滚动 {
+      * {
+        flex-shrink: 0;
+      }
+    }
+  </style>
+  <style>
+    h1 {
+      font-size: calc(var(--sf) * 60px);
+      color: #4d416e;
+    }
+    p {
+      font-size: calc(var(--sf) * 40px);
+      color: #4d416e;
     }
   </style>
 
   <body style="color: #81779ad9;white-space: nowrap;">
-    <div class="xia 铺满" >
-      <div class="zon 铺满">
 
+    <div id="弹幕区域" class="铺满 原位" style="z-index: -10;color: #81779ad9;font-size: calc(var(--sf) * 40px);
+              max-width:100% ;max-height: 100%;overflow: hidden;"></div>
+
+    <div id="主滚动区域" class="xia 全屏 滚动" style="overflow-y: auto;overflow-x: hidden;  scrollbar-width: none; ">
+
+      <div class="zon 铺满 " style="position: sticky;top: calc(var(--sf) * 300px - 50%);z-index: -1;">
         <div class="zon 重要文本" style="position: relative;">
           <span class="you zon" style="position: absolute;top: 0;transform: translateY(-100%);">
             <span style="font-size:calc(var(--sf) * 120px);text-shadow: 0px 5px 8px #3a315e4d;">不明瓶中星尘</span>
             <span style=" writing-mode: vertical-lr;font-size: calc(var(--sf) * 30px);position: relative;
-              bottom: -5px;text-shadow:5px 0px 4px #3a315e4d;">BMPZXC</span>
+                            bottom: calc(var(--sf) * -5px);text-shadow:5px 0px 4px #3a315e4d;">BMPZXC</span>
           </span>
           <div class="正比 "
             style="height:calc(var(--sf) * 250px);border-radius: 50%;overflow: hidden; box-shadow: 0px 5px 17px 6px #3a315e4d;">
             <img class="正比" src="./头像.png" alt="" style="height: 205%;transform: translate(-6%, -21%); ">
           </div>
         </div>
-
-        <div id="弹幕区域"  class="铺满 原位" style="z-index: -1;color: #81779ad9;font-size: calc(var(--sf) * 40px);
-        max-width:100% ;max-height: 100%;overflow: hidden;"></div>
       </div>
 
-      <div class="zon zon 底边栏背景 " style="padding: 5px 20px;width: 100%;box-shadow: 0px -5px 10px 0px #3a315e4d;
-      flex-wrap: wrap;gap:0 calc(var(--sf) * 80px);font-size: calc(var(--sf) * 40px);">
-        <a href="https://space.bilibili.com/1101590867" target="_blank" rel="noopener noreferrer">哔哩哔哩</a>
-        <a href="mqq://card/show_pslcard?src_type=internal&source=sharecard&version=1&uin=2298803971">
+      <div class="zon  " style="padding: 5px 20px;width: 100%; box-sizing: border-box;z-index: 1;
+                    flex-wrap: wrap;gap:0 calc(var(--sf) * 80px);font-size: calc(var(--sf) * 40px);
+                    position: sticky;bottom: 0;">
+        <a href="https://space.bilibili.com/1101590867" target="_blank" rel="noopener noreferrer"">哔哩哔哩</a>
+        <a href=" mqq://card/show_pslcard?src_type=internal&source=sharecard&version=1&uin=2298803971">
           qq:2298803971</a>
         <a href="https://github.com/BMPZXC" target="_blank" rel="noopener noreferrer">主仓库github</a>
         <a href="https://gitee.com/BMPZXC" target="_blank" rel="noopener noreferrer">国内备用gitee</a>
+
+        <div class="底边栏背景 铺满" style="padding-bottom: calc(var(--sf) * 200px);"></div>
+        <div class="铺满 原位" style="box-shadow: 0px -5px 10px 0px #3a315e4d;
+        border-radius: calc(var(--sf) * 50px) calc(var(--sf) * 50px) 0 0;z-index: -2;"></div>
+
+      </div>
+
+
+
+      <div id="内容滚动区域" class="xia " style="height:  calc(90vh - var(--sf) * 80px);background-color: rgb(255, 255, 255);width: 100%;
+      overflow-y: auto;overflow-x: hidden;  scrollbar-width: none;align-items: center;">
+        <div class="xia" style="flex-shrink: 0;color: #81779ad9;padding:calc(var(--sf) * 50px) ;
+        min-height:  150vh;max-width: calc( var(--sf) * 1200px);white-space: break-spaces;">
+          <div style=" height:  calc(var(--sf) * 400px)"></div>
+          <h1>大三</h1>
+          <p>制作该个人静态网站</p>
+          <p>在《湖北尼曼光电科技有限公司》电子厂上班</p>
+          <h1>大二</h1>
+          <p>参加2025界《卡赢杯》,作品《途中》</p>
+          <p>godot引擎开发游戏《象棋·叠子》</p>
+          <h1>大一</h1>
+          <p>制作软件《局域网分享》，与浏览器结合使用，进行互传.</p>
+          <p>用ai辅助编程,ai真好用ꉂ(ˊᗜˋ*)</p>
+          <h1>高三</h1>
+          <p>自学绘画中</p>
+          <h1>初三</h1>
+          <p>入坑《铁锈战争》mod自制</p>
+          <div style=" height:  calc(var(--sf) * 400px)"></div>
+        </div>
       </div>
     </div>
 
@@ -108,9 +162,9 @@
   <script>
     let 数据 = [
       , "godot很轻量,但导出应用不够小"
-      ,"不想碰c++,java,kt"
-      ,"c#,c,html-css-js非常不错"
-      ,"应用级语言+系统web+原生前端,可以做微应用,且体积小"
+      , "不想碰c++,java,kt"
+      , "c#,c,html-css-js非常不错"
+      , "应用级语言+系统web+原生前端,可以做微应用,且体积小"
 
 
       , "听言辩事判人心,谈言说笑欲识君."
@@ -140,11 +194,11 @@
       , "要做的事3:用c语言写一门语言"
       , "要做的事4:写个素材存储工具,使用网状无级结构,当然得有足够的需求再说"
 
-      ,"工作真不好找,哪缺人我去哪"
-      ,"招聘软件是史"
+      , "工作真不好找,哪缺人我去哪"
+      , "招聘软件是史"
 
-      ,"我爱github"
-      ,"我爱cloudflare"
+      , "我爱github"
+      , "我爱cloudflare"
 
     ]
 
@@ -198,6 +252,107 @@
 
       }
     });
+  </script>
+  <script>
+    const parentScroll = document.getElementById('主滚动区域');
+    const childScroll = document.getElementById('内容滚动区域');
+    parentScroll.scrollTop
+    let 滚动对象序号 = 0;
+    let 滚动距离 = 0;
+    let 上帧时间 = performance.now();
+    let 正在滚动 = false;
+
+    function 滚动() {
+
+      const now = performance.now();
+      let a = (now - 上帧时间) * 0.001
+
+      if (a == 0) {
+        requestAnimationFrame(滚动);
+        return
+      }
+
+      let b = Math.floor(Math.min(Math.abs(10 * 滚动距离 * a + 1), Math.abs(滚动距离))) * Math.sign(滚动距离)
+      if (b == 0) {
+        if (Math.abs(滚动距离) < 1) {
+          正在滚动 = false
+          滚动距离 = 0
+        }else{
+          requestAnimationFrame(滚动)
+        }
+        return
+      }
+
+      上帧时间 = now;
+      滚动距离 -= b
+      if (滚动对象序号 == 0) {
+        let a = parentScroll.scrollTop + b - (parentScroll.scrollHeight - parentScroll.clientHeight)
+        if (a > 0) {
+          滚动对象序号 = 1;
+          childScroll.scrollTop += a;
+        }
+        parentScroll.scrollTop += b;
+      } else if (滚动对象序号 == 1) {
+        let a = childScroll.scrollTop + b;
+        if (a < 0) {
+          滚动对象序号 = 0;
+          parentScroll.scrollTop += a;
+        }
+        childScroll.scrollTop += b;
+      }
+      requestAnimationFrame(滚动)
+
+    }
+
+
+
+
+    [parentScroll, childScroll].forEach(scrollElement => {
+      scrollElement.addEventListener('wheel', scrollInterceptor, { passive: false });
+      scrollElement.addEventListener('touchmove', scrollInterceptor, { passive: false });
+      scrollElement.addEventListener('scroll', scrollInterceptor, { passive: false });
+    });
+
+
+
+    function scrollInterceptor(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const element = e.currentTarget;
+      let delta = 0;
+
+      if (e.type === 'wheel') {
+        // 鼠标滚轮
+        delta = e.deltaY;
+      } else if (e.type === 'touchmove') {
+        // 触屏滑动
+        const touch = e.touches[0];
+        const currentY = touch.clientY;
+        const lastY = element._lastTouchY || currentY;
+        delta = lastY - currentY;  // 注意：触屏方向与滚轮相反
+        element._lastTouchY = currentY;
+
+        // 多点触控检测
+        if (e.touches.length > 1) {
+          // 双指缩放等，跳过
+          return;
+        }
+      } else if (e.type === 'scroll') {
+        // 滚动事件（用于同步）
+        delta = element.scrollTop - (element._lastScrollTop || 0);
+        element._lastScrollTop = element.scrollTop;
+      }
+
+      滚动距离 += delta * 0.5;
+      if (Math.abs(滚动距离) >= 1 && !正在滚动) {
+        正在滚动 = true;
+        requestAnimationFrame(function () {
+          上帧时间 = performance.now();
+          滚动();
+        });
+      }
+    }
   </script>
 
 </html>

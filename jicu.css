@@ -1,3 +1,6 @@
+   
+
+   
    .xia {
      display: flex;
      flex-direction: column;
@@ -24,6 +27,10 @@
    .铺满 {
      width: 100%;
      height: 100%;
+   }
+   .全屏{
+    width: 100vw;
+    height: 100vh;
    }
 
    .原位 {
@@ -72,7 +79,12 @@
      /* const sf=getComputedStyle(document.documentElement).getPropertyValue('--sf');
           const sfValue=parseFloat(sf); */
 
+
+          /* 滚动 */
      /* overflow: hidden; */
+                /* 容器刚性,在父元素空间不足时 */
+                /* flex-shrink: 0; */
+
  /* white-space: nowrap; */
 
    /* //////////////////////////////////////// */
