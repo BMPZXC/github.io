@@ -52,6 +52,7 @@
       font-size: calc(var(--sf) * 60px);
       color: #4d416e;
     }
+
     p {
       font-size: calc(var(--sf) * 40px);
       color: #4d416e;
@@ -106,7 +107,7 @@
           <p>在《湖北尼曼光电科技有限公司》电子厂上班</p>
           <h1>大二</h1>
           <p>参加2025界《卡赢杯》,作品《途中》</p>
-          <p>godot引擎开发游戏《象棋·叠子》</p>
+          <p>godot引擎开发游戏《象棋·叠子》,在原有基础上,允许棋子堆叠一起移动.</p>
           <h1>大一</h1>
           <p>制作软件《局域网分享》，与浏览器结合使用，进行互传.</p>
           <p>用ai辅助编程,ai真好用ꉂ(ˊᗜˋ*)</p>
@@ -186,6 +187,7 @@
       , "吃饭是最大的事，但找到好吃的真难。。。。"
       , "不吃变化，我就会挂"
       , "呜呜呜。。。我好无聊啊꒦ິ^꒦ິ。"
+      , "听歌爽"
 
       , "这是个人博客,外链的整合"
 
@@ -256,7 +258,7 @@
   <script>
     const parentScroll = document.getElementById('主滚动区域');
     const childScroll = document.getElementById('内容滚动区域');
-    parentScroll.scrollTop
+    let 滚动对象组 = [parentScroll, childScroll];
     let 滚动对象序号 = 0;
     let 滚动距离 = 0;
     let 上帧时间 = performance.now();
@@ -272,12 +274,12 @@
         return
       }
 
-      let b = Math.floor(Math.min(Math.abs(10 * 滚动距离 * a + 1), Math.abs(滚动距离))) * Math.sign(滚动距离)
+      let b = Math.floor(Math.min(Math.abs(10 * 滚动距离 * a), Math.abs(滚动距离))) * Math.sign(滚动距离)
       if (b == 0) {
         if (Math.abs(滚动距离) < 1) {
           正在滚动 = false
           滚动距离 = 0
-        }else{
+        } else {
           requestAnimationFrame(滚动)
         }
         return
@@ -287,14 +289,14 @@
       滚动距离 -= b
       if (滚动对象序号 == 0) {
         let a = parentScroll.scrollTop + b - (parentScroll.scrollHeight - parentScroll.clientHeight)
-        if (a > 0) {
+        if (a >= 0) {
           滚动对象序号 = 1;
           childScroll.scrollTop += a;
         }
         parentScroll.scrollTop += b;
       } else if (滚动对象序号 == 1) {
         let a = childScroll.scrollTop + b;
-        if (a < 0) {
+        if (a <= 0) {
           滚动对象序号 = 0;
           parentScroll.scrollTop += a;
         }
@@ -309,42 +311,83 @@
 
     [parentScroll, childScroll].forEach(scrollElement => {
       scrollElement.addEventListener('wheel', scrollInterceptor, { passive: false });
-      scrollElement.addEventListener('touchmove', scrollInterceptor, { passive: false });
-      scrollElement.addEventListener('scroll', scrollInterceptor, { passive: false });
+
+
+      scrollElement.addEventListener('touchmove', 触屏移动, { passive: false });
+      scrollElement.addEventListener('touchstart', 触屏按下, { passive: true });
+      scrollElement.addEventListener('touchend', 触屏松开, { passive: true });
+
+      scrollElement.addEventListener('mousedown', 鼠标按下, { passive: false });
+
     });
-
-
+    document.addEventListener('mouseup', 鼠标松开);
 
     function scrollInterceptor(e) {
       e.preventDefault();
       e.stopPropagation();
+      滚动值变化(e.deltaY)
+
+    }
+
+
+
+    function 触屏按下(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const element = e.currentTarget;
+      element._lastTouchY = e.touches[0].clientY;
+    }
+    function 触屏松开(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const element = e.currentTarget;
+      element._lastTouchY = null;
+    }
+    function 触屏移动(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.touches.length > 1) {
+        return;
+      }
+      const element = e.currentTarget;
+      const touch = e.touches[0];
+      const currentY = touch.clientY;
+      滚动值变化((element._lastTouchY || currentY) - currentY)
+      element._lastTouchY = currentY;
+    }
+
+
+
+
+    function 鼠标按下(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.button !== 0) return;
 
       const element = e.currentTarget;
-      let delta = 0;
+      element._鼠标 = e.clientY;
+      document.addEventListener('mousemove', 鼠标移动);
 
-      if (e.type === 'wheel') {
-        // 鼠标滚轮
-        delta = e.deltaY;
-      } else if (e.type === 'touchmove') {
-        // 触屏滑动
-        const touch = e.touches[0];
-        const currentY = touch.clientY;
-        const lastY = element._lastTouchY || currentY;
-        delta = lastY - currentY;  // 注意：触屏方向与滚轮相反
-        element._lastTouchY = currentY;
+    }
+    function 鼠标松开(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const element = e.currentTarget;
+      element._鼠标 = null;
+      document.removeEventListener('mousemove', 鼠标移动);
+    }
+    function 鼠标移动(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const element = e.currentTarget;
+      const currentY = e.clientY;
+      滚动值变化((element._鼠标 || currentY) - currentY)
+      element._鼠标 = currentY;
+    }
 
-        // 多点触控检测
-        if (e.touches.length > 1) {
-          // 双指缩放等，跳过
-          return;
-        }
-      } else if (e.type === 'scroll') {
-        // 滚动事件（用于同步）
-        delta = element.scrollTop - (element._lastScrollTop || 0);
-        element._lastScrollTop = element.scrollTop;
-      }
 
-      滚动距离 += delta * 0.5;
+    function 滚动值变化(a) {
+      滚动距离 += a;
       if (Math.abs(滚动距离) >= 1 && !正在滚动) {
         正在滚动 = true;
         requestAnimationFrame(function () {
