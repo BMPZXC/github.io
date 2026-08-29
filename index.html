@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="jicu.css">
     <script src="./尺寸适应.js"></script>
+    <title>不明瓶中星尘</title>
   </head>
   <style>
     .重要文本 {
@@ -61,21 +62,26 @@
 
   <body style="color: #81779ad9;white-space: nowrap;">
 
-    <div id="弹幕区域" class="铺满 原位" style="z-index: -10;color: #81779ad9;font-size: calc(var(--sf) * 40px);
-              max-width:100% ;max-height: 100%;overflow: hidden;"></div>
+
 
     <div id="主滚动区域" class="xia 全屏 滚动" style="overflow-y: auto;overflow-x: hidden;  scrollbar-width: none; ">
 
-      <div class="zon 铺满 " style="position: sticky;top: calc(var(--sf) * 300px - 50%);z-index: -1;">
-        <div class="zon 重要文本" style="position: relative;">
-          <span class="you zon" style="position: absolute;top: 0;transform: translateY(-100%);">
-            <span style="font-size:calc(var(--sf) * 120px);text-shadow: 0px 5px 8px #3a315e4d;">不明瓶中星尘</span>
-            <span style=" writing-mode: vertical-lr;font-size: calc(var(--sf) * 30px);position: relative;
+      <div class="铺满" style="overflow: hidden;clip-path: inset(0);">
+
+        <div id="弹幕区域" class="铺满 原位" style="z-index: -10;color: #81779ad9;font-size: calc(var(--sf) * 40px);
+                      max-width:100% ;max-height: 100%;overflow: hidden;"> </div>
+
+        <div class="zon 铺满 原位">
+          <div class="zon 重要文本" style="position: relative;">
+            <span class="you zon" style="position: absolute;top: 0;transform: translateY(-100%);">
+              <span style="font-size:calc(var(--sf) * 120px);text-shadow: 0px 5px 8px #3a315e4d;">不明瓶中星尘</span>
+              <span style=" writing-mode: vertical-lr;font-size: calc(var(--sf) * 30px);position: relative;
                             bottom: calc(var(--sf) * -5px);text-shadow:5px 0px 4px #3a315e4d;">BMPZXC</span>
-          </span>
-          <div class="正比 "
-            style="height:calc(var(--sf) * 250px);border-radius: 50%;overflow: hidden; box-shadow: 0px 5px 17px 6px #3a315e4d;">
-            <img class="正比" src="./头像.png" alt="" style="height: 205%;transform: translate(-6%, -21%); ">
+            </span>
+            <div class="正比 "
+              style="height:calc(var(--sf) * 250px);border-radius: 50%;overflow: hidden; box-shadow: 0px 5px 17px 6px #3a315e4d;">
+              <img class="正比" src="./头像.png" alt="" style="height: 205%;transform: translate(-6%, -21%); ">
+            </div>
           </div>
         </div>
       </div>
@@ -83,7 +89,8 @@
       <div class="zon  " style="padding: 5px 20px;width: 100%; box-sizing: border-box;z-index: 1;
                     flex-wrap: wrap;gap:0 calc(var(--sf) * 80px);font-size: calc(var(--sf) * 40px);
                     position: sticky;bottom: 0;">
-        <span style="position: absolute;top: 0;transform: translateY(-100%);font-size: calc(var(--sf) * 20px);">可以[上下滑动]</span>
+        <span
+          style="position: absolute;top: 0;transform: translateY(-100%);font-size: calc(var(--sf) * 20px);">可以[上下滑动]</span>
         <a href="https://space.bilibili.com/1101590867" target="_blank" rel="noopener noreferrer"">哔哩哔哩</a>
         <a href=" mqq://card/show_pslcard?src_type=internal&source=sharecard&version=1&uin=2298803971">
           qq:2298803971</a>
@@ -98,25 +105,56 @@
 
 
 
-      <div id="内容滚动区域" class="xia " style="height:  calc(90vh - var(--sf) * 80px);background-color: rgb(255, 255, 255);width: 100%;
+      <div id="内容滚动区域" class="xia " style="height:  calc(100vh - var(--sf) * 160px);width: 100%;position: relative;
       overflow-y: auto;overflow-x: hidden;  scrollbar-width: none;align-items: center;">
-        <div class="xia" style="flex-shrink: 0;padding:calc(var(--sf) * 50px) ;
+
+        <div style="position: sticky;top: calc(var(--sf) * 100px);width: 100%;z-index: 1;">
+          <div id="显示切换" style="position: absolute;right: 2vw;" onclick="显示切换()">
+            <svg t="1787963997630" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              p-id="3399" width="calc(var(--sf) * 100px)" height="calc(var(--sf) * 100px)">
+              <path style="fill: #4d416e"
+                d="M550.4 842.5984V998.4h-76.8v-155.8016a336.3328 336.3328 0 0 0 76.8 0z m222.5152-123.9808l110.1824 110.1568-54.3232 54.3232-110.1568-110.1824a334.7968 334.7968 0 0 0 54.272-54.272z m-521.8304 0a334.7968 334.7968 0 0 0 54.272 54.272l-110.1312 110.208-54.3232-54.3232 110.1824-110.1568zM512 256c141.3888 0 256 114.6112 256 256s-114.6112 256-256 256-256-114.6112-256-256 114.6112-256 256-256z m486.4 217.6v76.8h-155.8016a336.3328 336.3328 0 0 0 0-76.8H998.4z m-816.9984 0a336.3328 336.3328 0 0 0 0 76.8H25.6v-76.8h155.8016z m13.824-332.6976l110.1568 110.1824a334.7968 334.7968 0 0 0-54.272 54.272L140.8768 195.2512l54.3232-54.3232z m633.5488 0l54.3232 54.3232-110.1824 110.1568a334.7968 334.7968 0 0 0-54.272-54.272l110.1312-110.208zM550.4 25.6v155.8016a336.3328 336.3328 0 0 0-76.8 0V25.6h76.8z"
+                p-id="3400"></path>
+            </svg>
+            <svg style="transform: scaleX(0);" t="1787965753055" class="icon 原位" viewBox="0 0 1024 1024" version="1.1"
+              xmlns="http://www.w3.org/2000/svg" p-id="3553" width="calc(var(--sf) * 100px)"
+              height="calc(var(--sf) * 100px)">
+              <path style="fill: #4d416e"
+                d="M644.5056 70.528C834.4064 127.488 972.8 303.5648 972.8 512c0 254.4896-206.3104 460.8-460.8 460.8-222.4128 0-408.0128-157.568-451.2768-367.1296A433.4848 433.4848 0 0 0 230.4 640c240.3584 0 435.2-194.8416 435.2-435.2 0-44.2112-6.5792-86.8608-18.8416-127.0528z"
+                p-id="3554"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div id="简历内容" class="xia" style="flex-shrink: 0;padding:calc(var(--sf) * 50px) ;
         min-height:  150vh;max-width: calc( var(--sf) * 1200px);white-space: break-spaces;">
           <div style=" height:  calc(var(--sf) * 400px)"></div>
           <h1>大三</h1>
-          <p>制作该个人静态网站</p>
+          <p 重要>制作该个人静态网站</p>
           <p>在《湖北尼曼光电科技有限公司》电子厂上班</p>
           <h1>大二</h1>
-          <p>参加2025界《卡赢杯》,作品《途中》</p>
+          <p 重要>参加2025界《卡赢杯》,作品《途中》</p>
           <p>godot引擎开发游戏《象棋·叠子》,在原有基础上,允许棋子堆叠一起移动.</p>
           <h1>大一</h1>
-          <p>制作软件《局域网分享》，与浏览器结合使用，进行互传.</p>
+          <p 重要>制作软件《局域网分享》，与浏览器结合使用，进行互传.</p>
           <p>用ai辅助编程,ai真好用ꉂ(ˊᗜˋ*)</p>
           <h1>高三</h1>
           <p>自学绘画中</p>
           <h1>初三</h1>
           <p>入坑《铁锈战争》mod自制</p>
           <div style=" height:  calc(var(--sf) * 400px)"></div>
+        </div>
+        <div class="you zon" style="width: 100%;padding:calc(var(--sf) * 20px) ;
+        gap: calc(var(--sf) * 20px);font-size: calc(var(--sf) * 30px);">
+          <span>diy爱好者</span>
+          <span>手搓代码</span>
+          <span>绘画小白</span>
+          <span>渴望成为六边形战士</span>
+          <span>无聊就会emo</span>
+          <span>听歌听歌</span>
+          <span>脑洞</span>
+          <span>个人势</span>
+          <span>行动派</span>
         </div>
       </div>
     </div>
@@ -231,13 +269,16 @@
       });
     }
     setInterval(() => {
-      if (document.hidden) { return }
+      if (弹幕隐藏) { return }
       const 随机内容 = 数据[Math.floor(Math.random() * 数据.length)];
       发送弹幕(随机内容);
     }, 1000);
 
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
+    document.addEventListener('visibilitychange', () => { 弹幕状态更新(document.hidden) });
+    let 弹幕隐藏 = true;
+    function 弹幕状态更新(a) {
+      弹幕隐藏 = a
+      if (a) {
         for (const element of 弹幕区域.children) {
           const animation = element.getAnimations()[0];
           if (animation) {
@@ -254,8 +295,84 @@
         }
 
       }
-    });
+    }
   </script>
+
+
+
+  <!-- ###################################################### -->
+
+  <style>
+    @keyframes 内容出现 {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes 内容隐藏 {
+      to {
+        opacity: 0.1;
+      }
+    }
+  </style>
+  <script>
+    let 是太阳 = true
+    let 切换完成 = true
+    function 显示切换() {
+      是太阳 = !是太阳
+      切换完成 = false
+      let a1 = document.getElementById('显示切换').children
+      if (是太阳) {
+        a(a1[1], a1[0])
+      } else {
+        a(a1[0], a1[1])
+      }
+      function a(b, c) {
+        b.animate([{ transform: 'scaleX(1)' }, { transform: 'scaleX(0)' }], { duration: 200, fill: 'forwards', easing: 'ease-in' })
+          .onfinish = () => {
+            内容切换()
+            c.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: 200, fill: 'forwards', easing: 'ease-out' })
+              .onfinish = () => {
+                切换完成 = true
+              }
+          }
+      }
+    }
+
+    内容切换()
+    function 内容切换() {
+      let a = document.getElementById('简历内容')
+      if (是太阳) {
+        let 有重要文本 = false
+        for (let i = a.children.length - 1; i >= 0; i--) {
+          let b = a.children[i]
+          switch (b.tagName) {
+            case 'H1':
+              if (有重要文本) {
+                有重要文本 = false
+              } else {
+                b.style.animation = '内容隐藏 1s forwards'
+              }
+              break;
+            case 'P':
+              if (b.hasAttribute('重要')) {
+                有重要文本 = true
+              } else {
+                b.style.animation = '内容隐藏 1s forwards'
+              }
+              break;
+          }
+        }
+      } else {
+        for (let i = a.children.length - 1; i >= 0; i--) {
+          a.children[i].style.animation = '内容出现 1s forwards'
+        }
+
+      }
+
+    }
+  </script>
+
   <script>
     const parentScroll = document.getElementById('主滚动区域');
     const childScroll = document.getElementById('内容滚动区域');
@@ -291,13 +408,16 @@
       if (滚动对象序号 == 0) {
         let a = parentScroll.scrollTop + b - (parentScroll.scrollHeight - parentScroll.clientHeight)
         if (a >= 0) {
+          弹幕状态更新(true)
           滚动对象序号 = 1;
           childScroll.scrollTop += a;
         }
         parentScroll.scrollTop += b;
+        弹幕区域.style.opacity = 1 - parentScroll.scrollTop / (parentScroll.scrollHeight - parentScroll.clientHeight)
       } else if (滚动对象序号 == 1) {
         let a = childScroll.scrollTop + b;
         if (a <= 0) {
+          弹幕状态更新(false)
           滚动对象序号 = 0;
           parentScroll.scrollTop += a;
         }
@@ -333,13 +453,13 @@
 
 
     function 触屏按下(e) {
-      e.preventDefault();
+      // e.preventDefault();
       e.stopPropagation();
       const element = e.currentTarget;
       element._lastTouchY = e.touches[0].clientY;
     }
     function 触屏松开(e) {
-      e.preventDefault();
+      // e.preventDefault();
       e.stopPropagation();
       const element = e.currentTarget;
       element._lastTouchY = null;
@@ -388,7 +508,7 @@
 
 
     function 滚动值变化(a) {
-      滚动距离 += a;
+      滚动距离 += a*1.2;
       if (Math.abs(滚动距离) >= 1 && !正在滚动) {
         正在滚动 = true;
         requestAnimationFrame(function () {
